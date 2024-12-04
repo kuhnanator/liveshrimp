@@ -1,0 +1,45 @@
+{
+  "camera": {
+    "resolution": [1920, 1080],      // Resolution of the camera capture
+    "frame_rate": 30,                // Frame rate for video recording
+    "output_format": "mp4",          // Format of the recorded video (e.g., mp4, avi)
+    "flip_vertical": false,          // Option to flip the camera feed vertically
+    "flip_horizontal": false         // Option to flip the camera feed horizontally
+  },
+
+  "video_storage": {
+    "path": "/home/pi/videos",       // Directory where video segments are saved
+    "max_storage_limit": 10000000000, // Max storage in bytes (10GB)
+    "compression_enabled": true,     // Whether to compress videos after recording
+    "compression_quality": 25        // Quality level for video compression (0 = best, 51 = worst)
+  },
+
+  "battery": {
+    "low_battery_threshold": 20,     // Low battery percentage threshold to trigger warnings or actions
+    "critical_battery_threshold": 10,// Critical battery percentage threshold for immediate action
+    "monitor_interval_minutes": 5    // Frequency of battery checks (in minutes)
+  },
+
+  "gps": {
+    "enabled": true,                 // Enable or disable GPS data overlay
+    "interval_seconds": 10,          // How often GPS data is fetched (in seconds)
+    "overlay_enabled": true          // Enable overlay of GPS data on video feed
+  },
+
+  "network": {
+    "upload_url": "https://your-upload-server.com/upload",  // URL to which videos are uploaded
+    "retry_interval_seconds": 30,   // How often to check for network availability and retry uploads
+    "max_retries": 5                // Max number of retries before giving up on upload
+  },
+
+  "schedule": {
+    "battery_check_interval_minutes": 10,   // Interval for checking battery status
+    "storage_management_interval_minutes": 5, // Interval for managing video storage and compression
+    "network_check_interval_minutes": 5      // Interval for checking network status
+  },
+
+  "logging": {
+    "enabled": true,                  // Whether logging is enabled
+    "log_file": "/home/pi/logs/video_capture.log"  // Path to the log file
+  }
+}
